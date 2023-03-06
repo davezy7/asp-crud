@@ -1,7 +1,9 @@
 using GAS_LATIHAN_ASP.Models;
 using GAS_LATIHAN_ASP.Models.DTO;
+using GAS_LATIHAN_ASP.Repositories.MenuRepository;
 using GAS_LATIHAN_ASP.Repositories.RoleRepository;
 using GAS_LATIHAN_ASP.Repositories.UserRepository;
+using GAS_LATIHAN_ASP.Services.MenuService;
 using GAS_LATIHAN_ASP.Services.PasswordService;
 using GAS_LATIHAN_ASP.Services.RoleService;
 using GAS_LATIHAN_ASP.Services.TokenService;
@@ -32,10 +34,12 @@ services.AddTransient<IUserService, UserService>();
 services.AddTransient<IPasswordService, PasswordService>();
 services.AddTransient<ITokenService, TokenService>();
 services.AddTransient<IRoleService, RoleService>();
+services.AddTransient<IMenuService, MenuService>();
 
 // Repositories
 services.AddTransient<IUserRepository, UserRepository>();
 services.AddTransient<IRoleRepository, RoleRepository>();
+services.AddTransient<IMenuRepository, MenuRepository>();
 
 // JWT
 services.AddAuthentication(options =>
